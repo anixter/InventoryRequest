@@ -43,11 +43,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>..\..\..\..\..\..\..\Development\SBIII\bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="CarlosAg.ExcelXmlWriter">
+      <HintPath>..\..\..\..\..\..\..\Development\Extensions\CarlosAg.ExcelXmlWriter.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -67,6 +74,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="mssccprj.scc" />
+    <Content Include="pir.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -75,10 +88,51 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\datepicker.css" />
+    <Content Include="css\screen.css" />
+    <Content Include="email-response.html" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="images\blue-gradient.jpg" />
+    <Content Include="images\logo.png" />
+    <Content Include="login.html" />
+    <Content Include="PIRform.aspx" />
+    <Content Include="Queue.aspx" />
+    <Content Include="queue.html" />
+    <Content Include="sales-team.html" />
+    <Content Include="scripts\bootstrap.min.js" />
+    <Content Include="scripts\datepicker.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="class\activedirectory.cs" />
+    <Compile Include="class\data.cs" />
+    <Compile Include="class\TraceSoap.cs" />
+    <Compile Include="pir.Master.cs">
+      <DependentUpon>pir.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pir.Master.designer.cs">
+      <DependentUpon>pir.Master</DependentUpon>
+    </Compile>
+    <Compile Include="PIRform.aspx.cs">
+      <DependentUpon>PIRform.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PIRform.aspx.designer.cs">
+      <DependentUpon>PIRform.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Queue.aspx.cs">
+      <DependentUpon>Queue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Queue.aspx.designer.cs">
+      <DependentUpon>Queue.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="storage\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

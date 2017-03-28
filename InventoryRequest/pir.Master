@@ -1,0 +1,108 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="pir.master.cs" Inherits="PIR.pir" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="../images/favicon.ico" />
+
+    <title>Project Inventory Request (PIR)</title>
+     
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/screen.css" rel="stylesheet" />
+    <link href="css/datepicker.css" rel="stylesheet" />
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+     <style>
+
+        .modal-backdrop
+        {
+            opacity:0.5 !important;
+        }
+        .file-link 
+        {
+            color:#0078c0 !important;
+        }
+
+      </style>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+
+        <asp:ScriptManager ID="ScriptManager1" EnablePartialRendering="true" AjaxFrameworkMode="Enabled" ScriptMode="Release" runat="server">
+
+        </asp:ScriptManager>
+
+        <div aria-hidden="true"  id="bsModal" style="display:none" class="modal fade" role="dialog" tabindex="-1" aria-labelledby="myModalLabel">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button aria-hidden="true" class="close" type="button" data-dismiss="modal">×</button>
+                    <h4 id="H6" class="modal-title alert alert-success">Success</h4>
+                </div>
+                <div class="modal-body" id="modbody"></div>
+                <div class="modal-footer">
+                    <button class="btn btn-outline btn-primary" type="button" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+
+
+
+        <div aria-hidden="true"  id="bsModalError" style="display:none" class="modal fade" role="dialog" tabindex="-1" aria-labelledby="myModalLabel">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button aria-hidden="true" class="close" type="button" data-dismiss="modal">×</button>
+                    <h4 id="H1" class="modal-title alert alert-danger">Error</h4>
+                </div>
+                <div class="modal-body" id="ErrorBody"></div>
+                <div class="modal-footer">
+                    <button class="btn btn-outline btn-primary" type="button" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+
+
+
+
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>    
+        </div>
+
+
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="scripts/bootstrap.min.js"></script>
+        <script src="scripts/datepicker.js"></script>   
+        
+
+        <asp:ContentPlaceHolder ID="Footer" runat="server">
+        </asp:ContentPlaceHolder> 
+        
+       
+
+    </form>
+</body>
+</html>

@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="../images/favicon.ico">
+
+    <title>Project Inventory Request (PIR)| Anixter</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/screen.css" rel="stylesheet">
+    <link href="css/datepicker.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div id="topper">
+      <div class="container">
+        <p class="pull-left"><span class="glyphicon glyphicon-user"></span> Welcome, John Doe (083215)</p>
+        <p class="pull-right"><a href="queue.html">View Your Request Queue</a></p>
+      </div>
+    </div><!--topper-->
+
+    <header>
+      <div class="container center-on-mobile">
+        <a id="logo" href=""><img src="images/logo.png" alt="Anixter" title="Anixter" /></a>
+        <span class="headline"><p><strong>PIR</strong><br />Project Inventory Request</p></span>
+      </div>
+    </header><!--header-->
+
+    <div class="container white">
+
+      <div id="intro">
+        <p>All items purchased on this request are subject to location/regional exposure.  After 90 days of inactivity material may be written down against sales location. If a request requires an NCNR (not stocked or non standard) but the customer won't sign one, the next level up of sales approval will be required.IRFs for PART SETUP ONLY, only require spec sheets and reason for set up.  Additional IRF will be required to purchase items if need arises.</p>
+        <p><span class="warning">*</span> Denotes Required Field</p>
+      </div><!--intro-->
+    </div><!--container-->
+
+    <div class="container form-tabs">
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="#sales-team" aria-controls="sales-team" role="tab" data-toggle="tab">Sales Team Information</a></li>
+          <li role="presentation"><a href="#pm-team" aria-controls="pm-team" role="tab" data-toggle="tab">Project Management Team</a></li>
+          <li role="presentation"><a href="#im-team" aria-controls="im-team" role="tab" data-toggle="tab">Inventory Management Team</a></li>
+        </ul><!--tabs-->
+    </div><!--tabs container-->
+
+    <div class="container fields-container white">
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="sales-team">
+            <br />
+            <p class="warning">NOTE: ANY MISSING INFORMATION WILL RESULT IN DELAYS</p>
+
+            <form class="form-horizontal">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="inputEmail3" class="col-sm-6 control-label">IRF For Part Setup Only? (Yes/No)</label>
+                  <div class="col-sm-6">
+                     <select class="form-control" id="part-setup">
+                      <option>- SELECT ONE - </option>
+                      <option>YES</option>
+                      <option>NO</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="inside-sales-rep" class="col-sm-6 control-label">Inside Sales Rep Name</label>
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control" id="inside-sales-rep" placeholder="">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="project-name" class="col-sm-6 control-label">Project Name</label>
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control" id="project-name" placeholder="">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="project-total" class="col-sm-6 control-label">Project Total ($)</label>
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control" id="project-total" placeholder="">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="inventory-request-total" class="col-sm-6 control-label">Inventory Request Total ($)</label>
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control" id="inventory-request-total" placeholder="">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="sales-location" class="col-sm-6 control-label">Sales Location</label>
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control" id="sales-location" placeholder="">
+                  </div>
+                </div>
+              </div><!--right side-->
+
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="customer-name" class="col-sm-6 control-label">Customer Name</label>
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control" id="customer-name" placeholder="">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="customer-number" class="col-sm-6 control-label">Customer Number</label>
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control" id="customer-number" placeholder="">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="first-release-date" class="col-sm-6 control-label">First Release Date</label>
+                  <div class="col-sm-6">
+                     <div class="input-group">
+                      <div class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></div>
+                      <input type="text" class="form-control" id="first-release-date" placeholder="MM/DD/YYYY" required>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="date-requested" class="col-sm-6 control-label">Date Requested</label>
+                  <div class="col-sm-6">
+                    <div class="input-group">
+                      <div class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></div>
+                      <input type="text" class="form-control" id="date-requested" placeholder="MM/DD/YYYY" required>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="completion-date" class="col-sm-6 control-label">Completion Date</label>
+                  <div class="col-sm-6">
+                    <div class="input-group">
+                      <div class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></div>
+                      <input type="text" class="form-control" id="completion-date" placeholder="MM/DD/YYYY" required>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="customer-credit-limit" class="col-sm-6 control-label">Customer Credit Limit</label>
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control" id="customer-credit-limit" placeholder="">
+                  </div>
+                </div>
+              </div><!--left side-->
+
+              <div class="clearfix"></div>
+
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="scope-of-request" class="col-sm-3 control-label">Scope Of Request</label>
+                  <div class="col-sm-9">
+                    <textarea placeholder="Enter your Scope of Request" id="scope-of-request" rows="5"></textarea>
+                  </div>
+                </div>
+              </div><!--full width text area-->
+
+              <div class="clearfix"></div>
+
+              <hr />
+
+              <div class="col-md-6">
+
+                 <div class="form-group">
+                  <label for="specs-attached" class="col-sm-6 control-label">Specs Attached For New Parts?</label>
+                  <div class="col-sm-6">
+                    <select class="form-control" id="specs-attached">
+                      <option>- SELECT ONE - </option>
+                      <option>YES</option>
+                      <option>NO</option>
+                    </select>
+                  </div>
+                </div>
+
+                 <div class="form-group">
+                  <label for="firm-copper-placement" class="col-sm-6 control-label">Firm Copper At Placement?</label>
+                  <div class="col-sm-6">
+                     <select class="form-control" id="firm-copper-placement">
+                      <option>- SELECT ONE - </option>
+                      <option>YES</option>
+                      <option>NO</option>
+                    </select>
+                  </div>
+                </div>
+
+                 <div class="form-group">
+                  <label for="attached-vendor-quote" class="col-sm-6 control-label">Vendor Quote Or SPA Attached?</label>
+                  <div class="col-sm-6">
+                     <select class="form-control" id="attached-vendor-quote">
+                      <option>- SELECT ONE - </option>
+                      <option>YES</option>
+                      <option>NO</option>
+                    </select>
+                  </div>
+                </div>
+
+                 <div class="form-group">
+                  <label for="provide-source-of-pricing" class="col-sm-6 control-label">If Not, Provide Source Of Pricing</label>
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control" id="provide-source-of-pricing" placeholder="">
+                  </div>
+                </div>
+
+                 <div class="form-group">
+                  <label for="carrying-delay" class="col-sm-6 control-label">Inv Carrying Provision If Delayed</label>
+                  <div class="col-sm-6">
+                     <select class="form-control" id="carrying-delay">
+                      <option>- SELECT ONE - </option>
+                      <option>YES</option>
+                      <option>NO</option>
+                    </select>
+                  </div>
+                </div>
+
+                 <div class="form-group">
+                  <label for="explain-carrying-delay" class="col-sm-6 control-label">If Not, Explain</label>
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control" id="explain-carrying-delay" placeholder="">
+                  </div>
+                </div>
+
+                 <div class="form-group">
+                  <label for="quoted-cu-basew" class="col-sm-6 control-label">Quoted CU Base</label>
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control" id="quoted-cu-base" placeholder="">
+                  </div>
+                </div>
+
+              </div><!--left side-->
+
+              <div class="col-md-6">
+
+                 <div class="form-group">
+                  <label for="requested-warehouse" class="col-sm-6 control-label">Requested Warehouse(s)</label>
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control" id="requested-warehouse" placeholder="">
+                  </div>
+                </div>
+
+                 <div class="form-group">
+                  <label for="how-to-replenish" class="col-sm-6 control-label">How To Replenish</label>
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control" id="how-to-replenish" placeholder="">
+                  </div>
+                </div>
+
+                 <div class="form-group">
+                  <label for="attached-customer-po" class="col-sm-6 control-label">Attached Customer PO?</label>
+                  <div class="col-sm-6">
+                     <select class="form-control" id="attached-customer-po">
+                      <option>- SELECT ONE - </option>
+                      <option>YES</option>
+                      <option>NO</option>
+                    </select>
+                  </div>
+                </div>
+
+                 <div class="form-group">
+                  <label for="explain-why-no-po" class="col-sm-6 control-label">If Not, Explain Why</label>
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control" id="explain-why-no-po" placeholder="">
+                  </div>
+                </div>
+
+                 <div class="form-group">
+                  <label for="signed-ncnr" class="col-sm-6 control-label">Signed NCNR Attached?</label>
+                  <div class="col-sm-6">
+                     <select class="form-control" id="signed-ncnr">
+                      <option>- SELECT ONE - </option>
+                      <option>YES</option>
+                      <option>NO</option>
+                    </select>
+                  </div>
+                </div>
+
+                 <div class="form-group">
+                  <label for="explain-no-ncnr" class="col-sm-6 control-label">If Not, Explain Why</label>
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control" id="explain-no-ncnr" placeholder="">
+                  </div>
+                </div>
+
+                 <div class="form-group">
+                  <label for="upload-part-numbers" class="col-sm-6 control-label">Upload Part Numbers (XLS or CSV)</label>
+                  <div class="col-sm-6">
+                    <div class="input-group file-upload">
+                      <label class="input-group-btn">
+                          <span class="btn btn-primary">
+                              <span class="glyphicon glyphicon-export"></span> Browse&hellip; <input type="file" style="display: none;" multiple>
+                          </span>
+                      </label>
+                      <input type="text" class="form-control" readonly>
+                    </div>
+                  </div>
+                </div>
+
+              </div><!--right side-->
+
+              <div class="clearfix"></div>
+
+              <br />
+              <div class="col-md-12">
+                <div class="pull-right">
+                  <button type="submit" class="btn btn-primary mobile-button"><span class="glyphicon glyphicon-thumbs-up"></span> Submit</button>
+                </div>
+              </div><!--BUTTONS-->
+
+            </form>
+          </div><!--sales team-->
+
+          <div role="tabpanel" class="tab-pane" id="pm-team">
+            <br />
+            <p class="warning">NOTE: ANY MISSING INFORMATION WILL RESULT IN DELAYS</p>
+
+            <div class="col-md-4 col-sm-12">
+              <div class="form-group">
+                  <label for="type-of-contract" class="col-sm-6 control-label">Type Of Contract</label>
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control" id="type-of-contract" placeholder="">
+                  </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-12">
+              <div class="form-group">
+                  <label for="contract-setup-needed" class="col-sm-6 control-label">Contract Setup Needed?</label>
+                  <div class="col-sm-6">
+                    <select class="form-control" id="contract-setup-needed">
+                      <option>- SELECT ONE - </option>
+                      <option>YES</option>
+                      <option>NO</option>
+                    </select>
+                  </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-12">
+              <div class="form-group">
+                  <label for="followup-needed" class="col-sm-6 control-label">Additional Followup Needed?</label>
+                  <div class="col-sm-6">
+                    <select class="form-control" id="followup-needed">
+                      <option>- SELECT ONE - </option>
+                      <option>YES</option>
+                      <option>NO</option>
+                    </select>
+                  </div>
+                </div>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="col-md-4 col-sm-12">
+              <div class="form-group">
+                <label for="type-of-contract" class="col-sm-6 control-label">Type Of Contract</label>
+                <div class="col-sm-6">
+                  <input type="text" class="form-control" id="type-of-contract" placeholder="">
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-sm-12">
+              <label for="date" class="col-sm-6 control-label">Date</label>
+              <div class="input-group pm-date">
+                <div class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></div>
+                <input type="text" class="form-control" id="date" placeholder="MM/DD/YYYY" required>
+              </div>
+            </div>
+
+            <div class="clearfix"></div>
+
+             <div class="col-md-12">
+              <div class="form-group">
+                <label for="additional-pricing" class="col-sm-6 control-label">Additional Pricing/General Details</label>
+                <div class="clearfix"></div>
+                <div class="col-md-12">
+                  <textarea id="additional-pricing" rows="5" placeholder="Enter your Additional Pricing/General Details"></textarea>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="marketing-memo" class="col-sm-6 control-label">Marketing Memo</label>
+                <div class="clearfix"></div>
+                <div class="col-md-12">
+                  <textarea rows="5" id="marketing-memo" placeholder="Enter Your Marketing Memo"></textarea>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12">
+              <div class="pull-right button-adj">
+                  <button type="submit" class="btn btn-primary mobile-button"><span class="glyphicon glyphicon-thumbs-up"></span> Submit</button>
+              </div>
+            </div><!--BUTTONS-->
+          </div><!--pm team-->
+
+          <div role="tabpanel" class="tab-pane" id="im-team">
+            <br />
+            <p class="warning">NOTE: ANY MISSING INFORMATION WILL RESULT IN DELAYS</p>
+
+            <div class="col-md-4 col-sm-12">
+              <div class="form-group">
+                  <label for="is-material-returnable" class="col-sm-6 control-label">Is Material Returnable To Vendor On The Annual Stock Rotation?</label>
+                  <div class="col-sm-6">
+                    <select class="form-control" id="is-material-returnable">
+                      <option>- SELECT ONE - </option>
+                      <option>YES</option>
+                      <option>NO</option>
+                    </select>
+                  </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-12">
+              <div class="form-group">
+                  <label for="additional-followup" class="col-sm-6 control-label">Additional Followup Needed?</label>
+                  <div class="col-sm-6">
+                    <select class="form-control" id="additional-followup">
+                      <option>- SELECT ONE - </option>
+                      <option>YES</option>
+                      <option>NO</option>
+                    </select>
+                  </div>
+                </div>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="col-md-4 col-sm-12">
+              <div class="form-group">
+                  <label for="reels-reversed" class="col-sm-6 control-label">Reels Need To Be Reversed?</label>
+                  <div class="col-sm-6">
+                    <select class="form-control" id="reels-reversed">
+                      <option>- SELECT ONE - </option>
+                      <option>YES</option>
+                      <option>NO</option>
+                    </select>
+                  </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-12">
+              <div class="form-group">
+                  <label for="location-restricted" class="col-sm-6 control-label">Location To Be Restricted?</label>
+                  <div class="col-sm-6">
+                    <select class="form-control" id="location-restricted">
+                      <option>- SELECT ONE - </option>
+                      <option>YES</option>
+                      <option>NO</option>
+                    </select>
+                  </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-12">
+               <div class="form-group">
+                <label for="po-number" class="col-sm-6 control-label">PO Number</label>
+                <div class="col-sm-6">
+                  <input type="text" class="form-control" id="po-number" placeholder="">
+                </div>
+              </div>
+            </div>
+
+            <div class="clearfix"></div>
+
+             <div class="col-md-12">
+              <div class="form-group">
+                <label for="risk-dollars" class="col-sm-6 control-label">Risk Dollars And Details</label>
+                <div class="clearfix"></div>
+                <div class="col-md-12">
+                  <textarea id="risk-dollars" rows="5" placeholder="Enter your Risk Dollars and Details"></textarea>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12">
+              <div class="pull-right button-adj">
+                  <button type="submit" class="btn btn-primary mobile-button"><span class="glyphicon glyphicon-thumbs-up"></span> Submit</button>
+              </div>
+            </div><!--BUTTONS-->
+
+          </div><!--inventory management team-->
+        </div><!--tabs content-->
+    </div><!--forms container-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
+    <script src="scripts/datepicker.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#date-reported').datepicker({
+                format: "mm/dd/yyyy"
+            });
+
+             $('#first-release-date').datepicker({
+                format: "mm/dd/yyyy"
+            });
+
+            $('#date-requested').datepicker({
+                format: "mm/dd/yyyy"
+            });
+
+            $('#completion-date').datepicker({
+                format: "mm/dd/yyyy"
+            });
+
+            $('#date').datepicker({
+                format: "mm/dd/yyyy"
+            });
+
+        });
+      </script>
+  </body>
+</html>
