@@ -104,22 +104,8 @@ namespace PIR
                 foreach (String x in ar)
                 {
 
-                    //cmd = new System.Data.SqlClient.SqlCommand("cmr_InsertFile", cn);
-                    // cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                    //cmd.Parameters.AddWithValue("@cmr_id", nu.CMRID);
-                    // cmd.Parameters.AddWithValue("@file_name", x);
-
-
-                    // byte[] imageBytes = System.IO.File.ReadAllBytes(Path.Combine(Server.MapPath("Storage"), x));
-                    //cmd.Parameters.AddWithValue("@file_data", imageBytes);
-
-                    // cmd.ExecuteNonQuery();
-
-
                     File.Move(Path.Combine(Server.MapPath("Storage"), x), Path.Combine(sDir, x));
 
-                    //if (File.Exists(filename))
-                    //    File.Delete(filename);
                 }
 
 
