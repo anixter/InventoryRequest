@@ -29,8 +29,8 @@
     <div class="container form-tabs">
         <ul class="nav nav-tabs" role="tablist">
           <li role="presentation" class="active"><a href="#sales-team" aria-controls="sales-team" role="tab" data-toggle="tab">Sales Team Information</a></li>
-          <li role="presentation"><a href="#pm-team" aria-controls="pm-team" role="tab" data-toggle="tab">Project Management Team</a></li>
-          <li role="presentation"><a href="#im-team" aria-controls="im-team" role="tab" data-toggle="tab">Inventory Management Team</a></li>
+          <li role="presentation" id="pm-team-control"><a href="#pm-team" aria-controls="pm-team" role="tab" data-toggle="tab">Project Management Team</a></li>
+          <li role="presentation" id="im-team-control"><a href="#im-team" aria-controls="im-team" role="tab" data-toggle="tab">Inventory Management Team</a></li>
         </ul><!--tabs-->
     </div><!--tabs container-->
 
@@ -518,9 +518,13 @@
                 format: "mm/dd/yyyy"
             });
 
-            
+         
+         //.removeClass('hidden');
 
-        });
+     });
+
+
+
 
     function DeleteMe(obj, name) {
 
