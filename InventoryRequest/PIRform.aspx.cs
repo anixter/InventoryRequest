@@ -15,29 +15,19 @@ namespace PIR
     public partial class PIRform : System.Web.UI.Page
     {
 
-        private string directory = ConfigurationManager.AppSettings["Directory"].ToString();
-        private string uEmail = String.Empty;
-        private readonly string db = ConfigurationManager.AppSettings["ConnectionString"].ToString();
-        private String strName = String.Empty;
-        private activedirectory user = null;
 
+        public String strName = String.Empty;
+        public String db = String.Empty;
+        activedirectory u = null;
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            //activedirectory u = (MasterPage)this.Master.FindControl(us);
+            activedirectory u = ((pir)this.Master).user;
 
-            System.Security.Principal.WindowsPrincipal p = System.Threading.Thread.CurrentPrincipal as System.Security.Principal.WindowsPrincipal;
+            db = ((pir)this.Master).db;
+            lbUserName.Text = u.dRequest.Name + " (" + u.dRequest.NTID + ")";
 
-            if (p.Identity.Name == String.Empty)
-                strName = System.Security.Principal.WindowsIdentity.GetCurrent().Name; // p.Identity.Name;
-            else
-                strName = p.Identity.Name;
-
-            if (strName != "")
-            { 
-                String x = String.Empty;
-                user = new activedirectory(directory, strName, true, DataType.NTID);          
-                lbUserName.Text = user.dRequest.Name + " ("+ user.dRequest.NTID + ")";
-            }
             if (!Page.IsPostBack)
             {
                 //LoadDLL();
@@ -47,6 +37,24 @@ namespace PIR
             CleanFiles();
 
             Page.MaintainScrollPositionOnPostBack = true;
+
+
+            if (Request["g"] != null)
+            {
+                //_req.LoadData("", Request["g"].ToString());
+                //ScriptManager.RegisterStartupScript(this, this.GetType(), "OpenRequest", "$('#myModal" + _req.CMRID + "').modal('show');", true);
+                // Load Request by GUID
+            }
+            else if(Request["i"] != null)
+            {
+                // Load Request by Item Number
+            }
+            else
+            {
+                
+
+
+            }
 
 
         }
